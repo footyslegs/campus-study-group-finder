@@ -1,0 +1,28 @@
+Ayoola Morakinyo
+Lab 3: Sample Project Repositories
+
+Project: Campus Study Group Finder
+
+I want to build a web application that helps students find and organize study groups for their classes. Students will be able to make an account, search for groups by course, join a group, schedule meetings, and send messages to group members. Group organizers will also have basic tools for managing members and posts.
+
+1. StudyBuddy
+https://github.com/abhikalparya/StudyBuddy
+
+This project is similar to my idea because students can search for study partners and create or join study rooms. It also uses Docker, GitHub Actions, and Azure, so it gives me an example of how I could containerize my application and set up a CI/CD pipeline.
+
+2. Study Group Finder & Collaboration Platform
+https://github.com/AbhishekHulule9579/Study-Group-Finder
+
+This application connects students who are taking the same courses. I can look at how it handles accounts, student profiles, courses, and group discovery when planning those parts of my project.
+
+3. StuddyBuddy
+https://github.com/bgunson/studybuddy
+
+This project matches users based on their learning goals and gives them interactive study rooms. It uses the MERN stack and Socket.IO. The real-time chat setup could help me understand how group messaging works.
+
+4. CodeChefVIT StudyBuddy
+https://github.com/CodeChefVIT/Study-Buddy-app
+
+This application also helps people find study partners and groups. Its frontend, backend, and Android code are kept in separate folders, which is a useful example of how to organize a project with several parts.
+
+These repositories are references for features, project structure, Docker, testing, and CI/CD. I plan to use Git for version control and GitHub Actions to test and build the project automatically.
