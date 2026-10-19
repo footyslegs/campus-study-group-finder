@@ -30,3 +30,14 @@ The `dev` branch holds a sample JavaFX project (a temperature converter) used to
 
 - `dev` is the default branch where work happens.
 - `release` only accepts changes through a pull request with one approving review and a passing CI run.
+
+## Project Site
+
+The Node.js project site is in [`code/project-site`](code/project-site). It includes a landing page, documentation index, quickstart, current starter feature instructions with real screenshots, and clearly labeled planned-feature guides.
+
+```sh
+cd code/project-site
+npm start
+```
+
+Open http://localhost:3000. Requires Node.js 18 or later; no dependencies need to be installed. Run `npm test` from the same folder to check local pages, links, assets, and server responses.
