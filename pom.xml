@@ -109,7 +109,13 @@
 			<plugin><!-- generates code coverage report and requires minimum code coverage when executing verify command -->
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.12</version>
+				<version>0.8.14</version>
+				<configuration>
+					<excludes>
+						<exclude>edu/westga/comp4420/project1/Main.class</exclude>
+						<exclude>edu/westga/comp4420/project1/view/codebehind/**</exclude>
+					</excludes>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
@@ -123,7 +129,7 @@
 							<goal>report</goal>
 						</goals>
 					</execution>
-					<!-- ensures code coverage minimum is met; GUI-only packages are excluded -->
+					<!-- ensures code coverage minimum is met; Main and codebehind classes are excluded -->
 					<execution>
 						<id>jacoco-check</id>
 						<goals>
@@ -132,16 +138,12 @@
 						<configuration>
 							<rules>
 								<rule>
-									<element>PACKAGE</element>
-									<excludes>
-										<exclude>edu.westga.comp4420.project1.view.codebehind</exclude>
-										<exclude>edu.westga.comp4420.project1</exclude>
-									</excludes>
+									<element>BUNDLE</element>
 									<limits>
 										<limit>
 											<counter>LINE</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>0.90</minimum>
+											<minimum>0.95</minimum>
 										</limit>
 									</limits>
 								</rule>
