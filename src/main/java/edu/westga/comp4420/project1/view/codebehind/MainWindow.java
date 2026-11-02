@@ -29,6 +29,9 @@ public class MainWindow {
 	private Button createGroupButton;
 
 	@FXML
+	private Button detailsButton;
+
+	@FXML
 	private ListView<StudyGroup> groupListView;
 
 	private final MainWindowViewModel viewModel;
@@ -49,6 +52,8 @@ public class MainWindow {
 		this.groupListView.setItems(this.viewModel.getGroups());
 		this.viewModel.selectedGroupProperty().bind(this.groupListView.getSelectionModel().selectedItemProperty());
 		this.createGroupButton.setOnAction(event -> this.openCreateGroupWindow());
+		this.detailsButton.disableProperty().bind(this.viewModel.selectedGroupProperty().isNull());
+		this.detailsButton.setOnAction(event -> this.openDetailsWindow());
 	}
 
 	private void openCreateGroupWindow() {
@@ -58,6 +63,19 @@ public class MainWindow {
 		} catch (IOException e) {
 			this.welcomeLabel.textProperty().unbind();
 			this.welcomeLabel.setText("The Create Group window could not be opened.");
+		}
+		this.viewModel.refresh();
+	}
+
+	private void openDetailsWindow() {
+		Stage owner = (Stage) this.detailsButton.getScene().getWindow();
+		StudyGroup group = this.viewModel.selectedGroupProperty().get();
+		try {
+			WindowLauncher.showModal(WindowLauncher.GROUP_DETAILS_WINDOW, "Group Details", owner,
+					controller -> ((GroupDetailsWindow) controller).setGroup(group));
+		} catch (IOException e) {
+			this.welcomeLabel.textProperty().unbind();
+			this.welcomeLabel.setText("The details window could not be opened.");
 		}
 		this.viewModel.refresh();
 	}
