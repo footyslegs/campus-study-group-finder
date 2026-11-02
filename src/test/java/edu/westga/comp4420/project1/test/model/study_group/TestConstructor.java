@@ -32,7 +32,8 @@ class TestConstructor {
 		assertEquals(1, group.getMemberCount(), "organizer is first member");
 		assertTrue(group.isMember(this.organizer), "organizer is a member");
 		assertFalse(group.isFull(), "not full");
-		assertEquals("COMP 4420 - Exam prep", group.toString(), "checking text");
+		assertEquals("COMP 4420 - Exam prep | 2026-12-01 18:30 | Library 2F | 1/5 members", group.toString(),
+				"checking text");
 	}
 
 	@Test

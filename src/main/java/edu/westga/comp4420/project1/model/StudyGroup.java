@@ -1,6 +1,7 @@
 package edu.westga.comp4420.project1.model;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,6 +19,10 @@ public class StudyGroup {
 	/** The smallest capacity a group may have. */
 	public static final int MINIMUM_CAPACITY = 2;
 
+	/** The text format used to show meeting times, for example 2026-12-01 18:30. */
+	public static final DateTimeFormatter DISPLAY_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
+	private static final String SUMMARY_FORMAT = "%s - %s | %s | %s | %d/%d members";
 	private static final String STUDENT_NULL = "student must not be null";
 
 	private final String courseCode;
@@ -224,6 +229,7 @@ public class StudyGroup {
 
 	@Override
 	public String toString() {
-		return this.courseCode + " - " + this.title;
+		return String.format(SUMMARY_FORMAT, this.courseCode, this.title, this.meetingTime.format(DISPLAY_FORMAT),
+				this.location, this.members.size(), this.capacity);
 	}
 }
