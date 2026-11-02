@@ -20,6 +20,9 @@ public final class WindowLauncher {
 	/** Resource name of the sign in window. */
 	public static final String SIGN_IN_WINDOW = "view/SignInWindow.fxml";
 
+	/** Resource name of the Create Group window. */
+	public static final String CREATE_GROUP_WINDOW = "view/CreateGroupWindow.fxml";
+
 	/** Resource name of the main window. */
 	public static final String MAIN_WINDOW = "view/MainWindow.fxml";
 
