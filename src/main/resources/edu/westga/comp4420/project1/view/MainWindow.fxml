@@ -17,6 +17,7 @@
 			<children>
 				<Label text="Course" />
 				<TextField fx:id="searchTextField" promptText="Search by course code, such as COMP 4420" HBox.hgrow="ALWAYS" />
+				<Button fx:id="createGroupButton" text="Create Group" />
 			</children>
 		</HBox>
 		<ListView fx:id="groupListView" VBox.vgrow="ALWAYS" />
