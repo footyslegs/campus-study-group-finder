@@ -23,6 +23,9 @@ public final class WindowLauncher {
 	/** Resource name of the Create Group window. */
 	public static final String CREATE_GROUP_WINDOW = "view/CreateGroupWindow.fxml";
 
+	/** Resource name of the group details window. */
+	public static final String GROUP_DETAILS_WINDOW = "view/GroupDetailsWindow.fxml";
+
 	/** Resource name of the main window. */
 	public static final String MAIN_WINDOW = "view/MainWindow.fxml";
 
