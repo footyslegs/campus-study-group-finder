@@ -43,3 +43,15 @@ zip -r campus-study-finder-project-site.zip project-site -x '*/node_modules/*' '
 ```
 
 Submit the ZIP containing the complete Node app. This app needs no node_modules directory.
+
+## Continuous deployment (AWS EC2)
+
+Every push to `release` that touches `code/project-site/` runs `.github/workflows/deploy-project-site.yml`:
+
+1. `npm test` must pass.
+2. GitHub Actions signs in to AWS through OIDC (no stored keys) with the role in the `AWS_DEPLOY_ROLE_ARN` repository variable.
+3. The site is built into a Docker image (`Dockerfile`, Node 22 Alpine, port 8080) and pushed to the `csgf-project-site` ECR repository as `:latest` and `:<short sha>`.
+4. An SSM Run Command tells the EC2 instance tagged `csgf-project-site` (t3.micro, Amazon Linux 2023) to run `/usr/local/bin/deploy-site`, which pulls `:latest` and restarts the container on port 80.
+5. The workflow curls the instance's public URL and fails if the site does not answer.
+
+Stop and delete the instance, security group and ECR repository after grading to stop charges.
