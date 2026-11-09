@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane hgap="10.0" vgap="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.comp4420.project1.view.codebehind.CreateGroupWindow">
+	<padding>
+		<Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+	</padding>
+	<columnConstraints>
+		<ColumnConstraints minWidth="110.0" />
+		<ColumnConstraints minWidth="260.0" />
+	</columnConstraints>
+	<children>
+		<Label text="Course" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+		<TextField fx:id="courseTextField" promptText="COMP 4420" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+		<Label text="Title" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+		<TextField fx:id="titleTextField" promptText="Exam 2 review" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+		<Label text="Location" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+		<TextField fx:id="locationTextField" promptText="Library, 2nd floor" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+		<Label text="Meeting time" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+		<TextField fx:id="meetingTimeTextField" promptText="2026-12-01 18:30" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+		<Label text="Capacity" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+		<TextField fx:id="capacityTextField" promptText="2 to 50" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+		<Button fx:id="createButton" defaultButton="true" maxWidth="Infinity" text="Create Group" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+		<Label fx:id="messageLabel" textFill="#b00020" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+	</children>
+</GridPane>
