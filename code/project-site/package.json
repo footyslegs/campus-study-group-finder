@@ -1,0 +1,15 @@
+{
+  "name": "campus-study-finder-project-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "COMP 4420 project site and documentation",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test"
+  }
+}

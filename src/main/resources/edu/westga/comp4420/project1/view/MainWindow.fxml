@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane hgap="10.0" vgap="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.comp4420.project1.view.codebehind.MainWindow">
+	<padding>
+		<Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+	</padding>
+	<columnConstraints>
+		<ColumnConstraints minWidth="90.0" />
+		<ColumnConstraints minWidth="160.0" />
+		<ColumnConstraints minWidth="130.0" />
+	</columnConstraints>
+	<children>
+		<Label text="Fahrenheit" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+		<TextField fx:id="fahrenheitTextField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+		<Button fx:id="toCelsiusButton" maxWidth="Infinity" text="To Celsius" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+		<Label text="Celsius" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+		<TextField fx:id="celsiusTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+		<Button fx:id="toFahrenheitButton" maxWidth="Infinity" text="To Fahrenheit" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+		<Label fx:id="messageLabel" textFill="#b00020" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+	</children>
+</GridPane>
